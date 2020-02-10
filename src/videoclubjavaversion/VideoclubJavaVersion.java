@@ -19,7 +19,6 @@ public class VideoclubJavaVersion {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println("fdfdf");
         ArrayList<Pelicula> peliculas = new ArrayList<Pelicula>();
         int maxPeliculas = 3000;
         int peliculasAñadidas = 0;
