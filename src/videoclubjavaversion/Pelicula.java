@@ -184,7 +184,11 @@ public class Pelicula {
         System.out.print("año: ");
         System.out.print(this.getAño() + " ");
         System.out.print("disponibilidad: ");
-        System.out.print(this.isDisponibilidad() + " ");
+        if(this.Disponibilidad==true){
+                    System.out.print("disponible ");
+        }else{
+            System.out.println("No disponible ");
+        }
         System.out.print("cantidad de copias disponibles: ");
         System.out.println(this.copiasPeliculas - this.copiasPeliculasReservadas);
     }
@@ -196,6 +200,7 @@ public class Pelicula {
             this.clientes.add(clienteAux);
             reservante.añadirPelicula(peliculaAux);
             this.copiasPeliculasReservadas++;
+            System.out.println("Gracias por reservar la pelicula");
             if (this.copiasPeliculasReservadas == this.copiasPeliculas) {
                 this.Disponibilidad = false;
             }
@@ -216,6 +221,7 @@ public class Pelicula {
         System.out.println("3)Por genero");
         System.out.println("4)por año");
         System.out.println("5)Por duración");
+        System.out.println("==========");
         aux = lector.nextInt();
         lector.nextLine();
         switch (aux) {
@@ -296,7 +302,7 @@ public class Pelicula {
         }
         }else{
             System.out.println("Esta pelicula no esta reservada por ningun"
-                    + "cliente");
+                    + " cliente");
         }
     }
     

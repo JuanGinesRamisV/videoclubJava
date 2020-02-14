@@ -61,11 +61,10 @@ public class VideoclubJavaVersion {
                     if (clientes.size() > 0) {
                         if (aux <= peliculas.size() - 1) {
                             peliculas.get(aux).reservarPelicula(Cliente.seleccionarCliente(clientes));
-                            System.out.println("Gracias por reservar la pelicula");
                         } else {
                             System.out.println("La pelicula no existe");
                         }
-                    }else{
+                    } else {
                         System.out.println("para reservar peliculas necesitas "
                                 + "tener clientes en el sistema");
                     }
@@ -89,19 +88,28 @@ public class VideoclubJavaVersion {
                     }
                     break;
                 case 6:
-                    Cliente.listarClientes(clientes);
-                    System.out.println("Introduce el id del cliente ");
-                    aux = lector.nextInt();
-                    System.out.println("");
-                    System.out.println("========");
-                    if (aux <= clientes.size() - 1) {
-                        clientes.get(aux).VerPeliculasReservadas();
-                    } else {
-                        System.out.println("El cliente no existe");
+                    if (clientes.size() > 0) {
+                        Cliente.listarClientes(clientes);
+                        System.out.println("Introduce el id del cliente ");
+                        aux = lector.nextInt();
+                        System.out.println("========");
+                        System.out.println("");
+                        if (aux <= clientes.size() - 1) {
+                            if(clientes.get(aux).getPeliculas().size()>0){
+                            clientes.get(aux).VerPeliculasReservadas();
+                            }else{
+                                System.out.println("El cliente no tiene ninguna"
+                                        + " pelicula reservada");
+                            }
+                        } else {
+                            System.out.println("El cliente no existe");
+                        }
+                    }else{
+                        System.out.println("aun no hay clientes en el sistema");
                     }
                     break;
                 case 7:
-                    salir=true;
+                    salir = true;
 
             }
 
